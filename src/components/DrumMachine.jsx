@@ -104,7 +104,7 @@ class DrumMachine extends React.Component{
           {this.renderSoundButton(8)}
         </div>
         <section id="configuration">
-          <div id="power">
+          <div id="power-container">
             <p><label for="power">Power</label></p>
             <label class="switch">
              <input type="checkbox" id="power" checked={this.state.power} onClick={this.handlePower}></input>
