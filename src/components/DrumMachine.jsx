@@ -105,9 +105,9 @@ class DrumMachine extends React.Component{
         </div>
         <section id="configuration">
           <div id="power">
-            <p>Power</p>
+            <p><label for="power">Power</label></p>
             <label class="switch">
-             <input type="checkbox" checked={this.state.power} onClick={this.handlePower}></input>
+             <input type="checkbox" id="power" checked={this.state.power} onClick={this.handlePower}></input>
              <span class="slider"></span>
             </label>
           </div>
@@ -116,8 +116,8 @@ class DrumMachine extends React.Component{
             </p>
           </div>
           <div id="volume-container">
-            <p>Volume</p>
-            <input className="volume-slider" value={this.state.volume*100} type="range" min="0" max="100" onChange={this.handleVolume}></input>
+            <p><label for="volume">Volume</label></p>
+            <input className="volume-slider" id="volume" value={this.state.volume*100} type="range" min="0" max="100" onChange={this.handleVolume}></input>
           </div>
           <div id="set">
           </div>
