@@ -8,13 +8,13 @@ const keyChar=["Q","W","E","A","S","D","Z","X","C"];
 
 function SoundButton(props){
   return(
-      <button
-        className="drum-pad"
-        onClick={props.onClick}
-        id={props.description}>{keyChar[props.value]}
-        <audio className="clip" src={audios[props.value]} id={keyChar[props.value]}>
-        </audio>
-      </button>
+    <button
+      className="drum-pad"
+      onClick={props.onClick}
+      id={props.description}>{keyChar[props.value]}
+      <audio className="clip" src={audios[props.value]} id={keyChar[props.value]}>
+      </audio>
+    </button>
   );
 
 }
@@ -46,23 +46,23 @@ class DrumMachine extends React.Component{
 
 
   getDescription(i){
-      let audiosSplited=audios[i].split("/");
-      let wantedString = audiosSplited[audiosSplited.length-1].match(/\w\w\w\w+/);
-      return wantedString[0];
+    let audiosSplited=audios[i].split("/");
+    let wantedString = audiosSplited[audiosSplited.length-1].match(/\w\w\w\w+/);
+    return wantedString[0];
   }
 
   renderSoundButton(i){
     return(
-    <SoundButton onClick={()=>this.handleClick(i)} value={i} description={this.getDescription(i)}/>
-      );
+      <SoundButton onClick={()=>this.handleClick(i)} value={i} description={this.getDescription(i)}/>
+    );
   }
 
   handleClick(i){
-    if (this.state.power){
+    if (this.state.power && i!==-1){
       let audio = document.getElementById(keyChar[i]);
-	  audio.volume=this.state.volume;
-	  audio.currentTime=0;
-	  audio.play();
+      audio.volume=this.state.volume;
+      audio.currentTime=0;
+      audio.play();
       let button = document.getElementById(this.getDescription(i));
       button.style.transform="translateY(4px)";
       button.style.backgroundColor="#f5c444";
@@ -83,15 +83,15 @@ class DrumMachine extends React.Component{
     })
   }
 
-  handlePower(event){
+  handlePower(){
     this.setState({
-      power:event.target.checked
+      power:!this.state.power
     })
   }
 
   render(){
     return(
-       <div id="drum-machine">
+      <div id="drum-machine">
         <div id="pads-container">
           {this.renderSoundButton(0)}
           {this.renderSoundButton(1)}
@@ -105,10 +105,10 @@ class DrumMachine extends React.Component{
         </div>
         <section id="configuration">
           <div id="power-container">
-            <p><label for="power">Power</label></p>
-            <label class="switch">
-             <input type="checkbox" id="power" checked={this.state.power} onClick={this.handlePower}></input>
-             <span class="slider"></span>
+            <p><label htmlFor="power">Power</label></p>
+            <label className="switch">
+              <input type="checkbox" id="power" onChange={this.handlePower} checked={this.state.power}></input>
+              <span className="slider"></span>
             </label>
           </div>
           <div id="display-container">
@@ -116,7 +116,7 @@ class DrumMachine extends React.Component{
             </p>
           </div>
           <div id="volume-container">
-            <p><label for="volume">Volume</label></p>
+            <p><label htmlFor="volume">Volume</label></p>
             <input className="volume-slider" id="volume" value={this.state.volume*100} type="range" min="0" max="100" onChange={this.handleVolume}></input>
           </div>
           <div id="set">
