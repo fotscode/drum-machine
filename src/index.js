@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import DrumMachine from './components/DrumMachine';
 
 class MyApp extends React.Component{
-	constructor(props){
-		super(props);
-	}
 
 	render(){
 		return(

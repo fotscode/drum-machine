@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 
 const audios=["https://sampleswap.org/samples-ghost/DRUMS%20(FULL%20KITS)/DRUM%20MACHINES/Kawai%20R50/20[kb]ETOM_H.wav.mp3","https://sampleswap.org/samples-ghost/DRUMS%20(FULL%20KITS)/DRUM%20MACHINES/Kawai%20R50/31[kb]ETOM_L.wav.mp3","https://sampleswap.org/samples-ghost/DRUMS%20(FULL%20KITS)/DRUM%20MACHINES/Kawai%20R50/22[kb]ETOM_M.wav.mp3","https://sampleswap.org/samples-ghost/DRUMS%20(FULL%20KITS)/DRUM%20MACHINES/Kawai%20R50/20[kb]BASSELEC.wav.mp3","https://sampleswap.org/samples-ghost/DRUMS%20(FULL%20KITS)/DRUM%20MACHINES/Kawai%20R50/35[kb]BASSFNK1.wav.mp3","https://sampleswap.org/samples-ghost/DRUMS%20(FULL%20KITS)/DRUM%20MACHINES/Kawai%20R50/22[kb]BASSFNK2.wav.mp3","https://sampleswap.org/samples-ghost/DRUMS%20(FULL%20KITS)/DRUM%20MACHINES/Kawai%20R50/14[kb]BD1_ELEC.wav.mp3","https://sampleswap.org/samples-ghost/DRUMS%20(FULL%20KITS)/DRUM%20MACHINES/Kawai%20R50/29[kb]BD2_REV.wav.mp3","https://sampleswap.org/samples-ghost/DRUMS%20(FULL%20KITS)/DRUM%20MACHINES/Kawai%20R50/15[kb]BD3_ACOU.wav.mp3"];
 
